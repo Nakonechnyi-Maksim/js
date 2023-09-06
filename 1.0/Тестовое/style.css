@@ -1,0 +1,97 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background: #f1f1f1;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+p {
+  display: inline-flex;
+  gap: 5px;
+  margin: auto;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.header {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 136px;
+  background-color: #fff;
+  flex-grow: 0;
+}
+
+.block1 {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.block2 {
+  margin: auto;
+}
+
+.menu {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  list-style-type: none;
+  cursor: pointer;
+  gap: 10px;
+  padding: 2px 10px;
+  height: 24px;
+}
+
+li:hover {
+  background: #d5d5d5;
+  border-radius: 34px;
+  transition: all 0.3s;
+}
+
+.input {
+  width: 592px;
+  height: 48px;
+  background: url(image/Union.svg) no-repeat center left;
+  background-position: 15px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.input:focus {
+  background-color: #fff;
+  outline: 2.5px solid #abc8ea;
+}
+
+.input::placeholder {
+  text-align: center;
+}
+
+.logo {
+  width: 88px;
+  height: 32px;
+  margin-right: 20px;
+}
+
+.icon {
+  width: 32px;
+}
+
+.search {
+  display: inline-flex;
+  align-items: center;
+}

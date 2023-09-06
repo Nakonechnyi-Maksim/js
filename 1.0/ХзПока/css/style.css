@@ -1,0 +1,41 @@
+body {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+p {
+  margin-top: 0px;
+  font-size: 30px;
+}
+
+.img {
+  width: 240px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.img:hover {
+  opacity: 0.85;
+  transition: all 0.2s;
+}
+
+.center {
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  height: 1000px;
+}
+
+.card {
+  margin: auto;
+}
+
+.soc {
+  width: 50px;
+}

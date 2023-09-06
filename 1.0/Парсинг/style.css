@@ -1,0 +1,82 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #ffa07a;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+  margin-bottom: 3px;
+}
+.search-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.delete-btn {
+  color: #ffffff;
+  border: 0px;
+  border-radius: 4px;
+  height: 30px;
+  width: 60px;
+  background-color: #ff4500;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background-color: #c94d37;
+  transition: all 0.2s;
+}
+.search-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px 0px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile {
+  width: 500px;
+  background-color: #ffa500;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 9px 9px 0px 0px #ff8c00;
+  margin-bottom: 14px;
+}
+.search-btn {
+  color: #ffffff;
+  border: 0px;
+  border-radius: 4px;
+  height: 30px;
+  width: 60px;
+  background-color: #ff4500;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: #c94d37;
+  transition: all 0.2s;
+}
+.search-input {
+  margin-top: 5px;
+  padding: 5px 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border-color: rgb(0, 0, 0);
+  margin-right: 5px;
+}
