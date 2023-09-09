@@ -12,7 +12,12 @@ module.exports = {
 
   againButton: {
     reply_markup: JSON.stringify({
-      inline_keyboard: [[{ text: "Ещё раз?", callback_data: "/again" }]],
+      inline_keyboard: [
+        [
+          { text: "Ещё раз?", callback_data: "/again" },
+          //{text: }
+        ],
+      ],
     }),
   },
 };

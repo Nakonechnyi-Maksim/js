@@ -11,11 +11,12 @@ const DB = {};
 bot.setMyCommands([
   { command: "/start", description: "Приветствие" },
   { command: "/info", description: "Информация что может этот бот" },
-  { command: "/labe", description: "Проверка" },
+  { command: "/like", description: "Ставишь лайк?" },
+  { command: "/amount", description: "Сколько лайков" },
 ]);
 
 const func = async (chatId) => {
-  await bot.sendMessage(chatId, "А теперь проверим", button);
+  await bot.sendMessage(chatId, "Ставишь лайк?", button);
 };
 
 const start = () => {
@@ -30,24 +31,21 @@ const start = () => {
       );
     }
     if (text === "/info") {
-      await bot.sendMessage(chatId, "Этот бот считает количество ");
+      await bot.sendMessage(chatId, "Этот бот считает количество лайков");
     }
-    if (text === "/labe") {
+    if (text === "/like") {
       return func(chatId);
     }
   });
-
   bot.on("callback_query", async (msg) => {
     const data = msg.data;
     const chatId = msg.message.chat.id;
 
-    await bot.sendMessage(chatId, `Ты сделал свой выбор`, againButton);
-    DB[chatId] = msg.data;
     if (data === "/again") {
       return func(chatId);
     }
-    console.log(msg);
-    console.log(DB);
+    DB[chatId] = data;
+    await bot.sendMessage(chatId, `Ты сделал свой выбор`, againButton);
   });
 };
 
