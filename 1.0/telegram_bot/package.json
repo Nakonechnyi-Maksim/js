@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node db.js"
+    "start_Bot": "nodemon index.js",
+    "start_PG": "nodemon pg.js"
   },
   "keywords": [],
   "author": "",
