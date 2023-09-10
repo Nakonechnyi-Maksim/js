@@ -7,8 +7,6 @@ const { token } = require("./token.js");
 const sequelize = require("./db");
 
 const UserModel = require("./models");
-const User = require("./models");
-const { where } = require("sequelize");
 
 const bot = new TelegramApi(token, { polling: true });
 
