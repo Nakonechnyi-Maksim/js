@@ -7,6 +7,8 @@ const { token } = require("./token.js");
 const sequelize = require("./db");
 
 const UserModel = require("./models");
+const User = require("./models");
+const { where } = require("sequelize");
 
 const bot = new TelegramApi(token, { polling: true });
 
@@ -28,14 +30,25 @@ const start = async () => {
   bot.on("message", async (msg) => {
     const text = msg.text;
     const chatId = msg.chat.id;
+    const user = await UserModel.findOne({ chatId });
+    console.log(user);
     try {
       if (text === "/start") {
-        await UserModel.create({ chatId });
-        await bot.sendMessage(chatId, `Привет, ${msg.from.first_name}`);
-        await bot.sendSticker(
-          chatId,
-          `https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/7.webp`
-        );
+        if (user) {
+          await bot.sendMessage(chatId, `Привет, ${msg.from.first_name}`);
+          await bot.sendSticker(
+            chatId,
+            `https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/7.webp`
+          );
+        } else {
+          await UserModel.create({ chatId });
+          await bot.sendMessage(chatId, `Привет, ${msg.from.first_name}`);
+          await bot.sendSticker(
+            chatId,
+            `https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/7.webp`
+          );
+          await user.save();
+        }
       }
       if (text === "/info") {
         await bot.sendMessage(chatId, "Этот бот считает количество лайков");
