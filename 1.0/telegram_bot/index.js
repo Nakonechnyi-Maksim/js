@@ -59,7 +59,7 @@ const start = async () => {
     const chatId = msg.message.chat.id;
 
     if (data === "/again") {
-      await func(chatId);
+      return func(chatId);
     }
 
     const user = await UserModel.findOne({ chatId });
