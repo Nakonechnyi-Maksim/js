@@ -42,7 +42,10 @@ const start = async () => {
           );
         } else {
           await UserModel.create({ chatId });
-          await bot.sendMessage(chatId, `Привет, ${msg.from.first_name}`);
+          await bot.sendMessage(
+            chatId,
+            `Привет, ${msg.from.first_name}, ты новый пользователь`
+          );
           await bot.sendSticker(
             chatId,
             `https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/7.webp`
