@@ -45,17 +45,28 @@ const start = async () => {
     }
     if (text === "/amount") {
       const user = await UserModel.findOne({ chatId });
-      return bot.sendMessage(chatId, `Количество Да ${user.amount_Yes}`);
+      await bot.sendMessage(
+        chatId,
+        `Количество Да ${user.amount_Yes} Нет ${user.amount_No}`
+      );
+      await user.save();
     }
   });
   bot.on("callback_query", async (msg) => {
     const data = msg.data;
     const chatId = msg.message.chat.id;
-
+    const user = await UserModel.findOne({ chatId });
     if (data === "/again") {
       return func(chatId);
     }
+    if (data == "Да") {
+      user.amount_Yes += 1;
+    }
+    if (data == "Нет") {
+      user.amount_No += 1;
+    }
     await bot.sendMessage(chatId, `Ты сделал свой выбор`, againButton);
+    await user.save();
   });
 };
 
